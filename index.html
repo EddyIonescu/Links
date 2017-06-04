@@ -19,9 +19,9 @@
             //$($('#android-link').click());
         }
         else if (/iPhone/.test(userAgent) && !window.MSStream) {
-            alert("ios");
+          //  alert("ios");
             //window.location.href = "sms:647-907-0726/&body=Hi there, I'm interested in getting involved...";
-            document.getElementById('ios-link').click();
+         //   document.getElementById('ios-link').click();
             //$($('#ios-link').click());
         }
         else {
@@ -47,6 +47,7 @@
                 // The person is not logged into this app or we are unable to tell. 
             }
         }, { scope: 'public_profile, phone_number, user_location' });
+
     </script>
 </body>
 
