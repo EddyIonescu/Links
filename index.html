@@ -12,7 +12,7 @@
     <a id="android-link" href="sms:647-907-0726?body=Hi there, I'm interested in getting involved...">Link</a>
     <script>
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
+        alert(userAgent);
         if (/android/i.test(userAgent)) {
             document.getElementById('android-link').click();
             $($('#ios-link').click());
