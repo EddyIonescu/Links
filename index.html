@@ -15,13 +15,13 @@
         //alert(userAgent);
         if (/Android/.test(userAgent)) {
             alert("android");
-            location.href = "sms:647-907-0726?body=Hi there, I'm interested in getting involved...";
+            window.location.href = "sms:647-907-0726?body=Hi there, I'm interested in getting involved...";
             //document.getElementById('android-link').click();
             //$($('#android-link').click());
         }
         else if (/iPhone/.test(userAgent) && !window.MSStream) {
             alert("ios");
-            location.href = "sms:647-907-0726/&body=Hi there, I'm interested in getting involved...";
+            window.location.href = "sms:647-907-0726/&body=Hi there, I'm interested in getting involved...";
             //document.getElementById('ios-link').click();
             //$($('#ios-link').click());
         }
