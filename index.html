@@ -10,20 +10,18 @@
     <a id="ios-link" href="sms:647-907-0726/&body=Hi there, I'm interested in getting involved...">Link</a>
     <a id="android-link" href="sms:647-907-0726?body=Hi there, I'm interested in getting involved...">Link</a>
     <script>
-        function getLink() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            if (/android/i.test(userAgent)) {
-                document.getElementById('android-link').click();
-            }
-            else if (/iPhone/.test(userAgent) && !window.MSStream) {
-                document.getElementById('ios-link').click();
-            }
-            else {
-                // facebook log-in, then show number to contact and show option to
-                // send email containing the link to a smartphone
-                alert("you're not on a smartphone");
-            }
+        if (/android/i.test(userAgent)) {
+            document.getElementById('android-link').click();
+        }
+        else if (/iPhone/.test(userAgent) && !window.MSStream) {
+            document.getElementById('ios-link').click();
+        }
+        else {
+            // facebook log-in, then show number to contact and show option to
+            // send email containing the link to a smartphone
+            alert("you're not on a smartphone");
         }
 
         (function (d, s, id) {
