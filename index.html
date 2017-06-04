@@ -1,28 +1,49 @@
 <html>
+
 <head>
     Links Test Website
 </head>
+
 <body>
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1154538651316699',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();   
-  };
+    <div id="fb-root"></div>
+    <a id="ios-link" href="sms:647-907-0726/&body=Hi there, I'm interested in getting involved...">Link</a>
+    <a id="android-link" href="sms:647-907-0726?body=Hi there, I'm interested in getting involved...">Link</a>
+    <script>
+        function getLink() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+            if (/android/i.test(userAgent)) {
+                document.getElementById('android-link').click();
+            }
+            else if (/iPhone/.test(userAgent) && !window.MSStream) {
+                document.getElementById('ios-link').click();
+            }
+            else {
+                // facebook log-in, then show number to contact and show option to
+                // send email containing the link to a smartphone
+                alert("you're not on a smartphone");
+            }
+        }
 
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1154538651316699";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+
+        FB.login(function (response) {
+            if (response.status === 'connected') {
+                // Logged into your app and Facebook.
+
+            } else {
+                // The person is not logged into this app or we are unable to tell. 
+            }
+        }, { scope: 'public_profile, phone_number, user_location' });
+    </script>
 </body>
+
 </html>
