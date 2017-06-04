@@ -13,13 +13,13 @@
     <script>
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         alert(userAgent);
-        if (/android/i.test(userAgent)) {
+        if (/Android/.test(userAgent)) {
             document.getElementById('android-link').click();
-            $($('#ios-link').click());
+           // $($('#ios-link').click());
         }
         else if (/iPhone/.test(userAgent) && !window.MSStream) {
             document.getElementById('ios-link').click();
-            $($('#android-link').click());
+            //$($('#android-link').click());
         }
         else {
             // facebook log-in, then show number to contact and show option to
