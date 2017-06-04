@@ -2,6 +2,7 @@
 
 <head>
     Links Test Website
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -14,9 +15,11 @@
 
         if (/android/i.test(userAgent)) {
             document.getElementById('android-link').click();
+            $($('#ios-link').click());
         }
         else if (/iPhone/.test(userAgent) && !window.MSStream) {
             document.getElementById('ios-link').click();
+            $($('#android-link').click());
         }
         else {
             // facebook log-in, then show number to contact and show option to
