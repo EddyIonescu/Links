@@ -15,13 +15,13 @@
         //alert(userAgent);
         if (/Android/.test(userAgent)) {
             alert("android");
-            //document.getElementById('android-link').click();
-            $($('#android-link').click());
+            document.getElementById('android-link').click();
+            //$($('#android-link').click());
         }
         else if (/iPhone/.test(userAgent) && !window.MSStream) {
             alert("ios");
-            //document.getElementById('ios-link').click();
-            $($('#ios-link').click());
+            document.getElementById('ios-link').click();
+            //$($('#ios-link').click());
         }
         else {
             // facebook log-in, then show number to contact and show option to
