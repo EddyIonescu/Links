@@ -19,7 +19,7 @@
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
+/*
     FB.login(function (response) {
       // handle the response
       if (response.status === 'connected') {
@@ -28,7 +28,7 @@
         // The person is not logged into this app or we are unable to tell. 
       }
     }, { scope: 'public_profile,email' });
-
+*/
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
@@ -50,12 +50,13 @@
     // This function is called when someone finishes with the Login
     // Button.  See the onlogin handler attached to it in the sample
     // code below.
+    /*
     function checkLoginState() {
       FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
       });
     }
-
+*/
     window.fbAsyncInit = function () {
       FB.init({
         appId: '{1154538651316699}',
